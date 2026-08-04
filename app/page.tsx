@@ -21,7 +21,6 @@ import {
   Rocket,
   BarChart3,
   GitBranch,
-  Sparkles,
   BrainCircuit,
   Globe,
 } from "lucide-react";
@@ -33,6 +32,7 @@ const navLinks = [
   { name: "Projects", href: "#projects" },
   { name: "Experience", href: "#experience" },
   { name: "Articles", href: "#articles" },
+  { name: "Services", href: "#services" },
   { name: "Contact", href: "#contact" },
 ];
 
@@ -66,7 +66,7 @@ const projects = [
   {
     title: "NutriFlow",
     category: "Full Stack | Food Aid Distribution",
-    year:"",
+    year: "",
     description:
       "A robust meal reservation system to streamline food distribution in Gaza. Features real-time capacity tracking, user-specific meal management, and a fully responsive bilingual UI. Optimized kitchen resource allocation and minimized food waste.",
     skills: "Next.js 14, TypeScript, Supabase, Prisma, Tailwind CSS, PWA, i18n",
@@ -77,7 +77,7 @@ const projects = [
   {
     title: "HospiLink",
     category: "Full Stack | Hospital Management",
-    year:"",
+    year: "",
     description:
       "Comprehensive hospital management system with real-time patient flow tracking, doctor-specific appointment management, electronic health records integration, and role-based access control. Built with a robust RESTful API.",
     skills: "React.js, Node.js, Express.js, TypeScript, PostgreSQL, Socket.io, Docker, CI/CD",
@@ -88,7 +88,7 @@ const projects = [
   {
     title: "Yoosel Digital Agency",
     category: "Frontend | Marketing Platform",
-    year:"",
+    year: "",
     description:
       "A modern, desktop-first web platform for a digital marketing agency. Designed to showcase services, success stories, and advanced marketing solutions with interactive tools and smooth animations.",
     skills: "React.js, Next.js, Tailwind CSS, GSAP",
@@ -99,13 +99,31 @@ const projects = [
   {
     title: "E-Commerce Store",
     category: "Frontend | E-Commerce",
-    year:"",
+    year: "",
     description:
       "A dynamic, fully responsive e-commerce storefront with fluid UI/UX, smooth hover animations, and interactive card transitions for an immersive shopping experience.",
     skills: "React.js, CSS Animations, Responsive Design, UI/UX",
     image: "/assets/Ecommerce.png",
     liveLink: "https://ecommerce-one-teal-22.vercel.app",
     githubLink: "https://github.com/Ayaalmadhon2004/Ecommerce-",
+  },
+];
+
+// ─── Services Data ────────────────────────────────────────────────
+const services = [
+  {
+    title: "Convert Your Design into a High-Performance Next.js Landing Page",
+    description:
+      "Transform your Figma/PSD design into a blazing-fast, SEO-friendly Next.js landing page with Tailwind CSS, smooth animations, and full responsiveness.",
+    link: "https://www.upwork.com/services/product/development-it-convert-your-design-into-a-high-performance-next-js-landing-page-2083832498508566892",
+    icon: <Layout size={24} />,
+  },
+  {
+    title: "Interactive Digital Menu with QR Code Ordering",
+    description:
+      "A modern digital menu system for restaurants with QR code scanning, real-time ordering, and admin dashboard — built with Next.js and full-stack architecture.",
+    link: "https://www.upwork.com/services/product/development-it-an-interactive-digital-menu-with-qr-code-ordering-2084576167400702201",
+    icon: <ExternalLink size={24} />,
   },
 ];
 
@@ -152,7 +170,7 @@ const articles = [
     tags: ["Full Stack", "Backend", "Socket.io", "Node.js", "Design Systems"],
     excerpt:
       "A deep dive into Socket.io architecture: Engine.io transport layer, HTTP long polling, automatic WebSocket upgrade, namespaces, rooms, Redis adapter scaling, sticky sessions, and JWT middleware authentication.",
-    link: "https://medium.com/@aya.alaasel123/how-socket-io-powers-real-time-apps-from-long-polling-to-production", 
+    link: "https://medium.com/@aya.alaasel123/how-socket-io-powers-real-time-apps-from-long-polling-to-production",
   },
 ];
 
@@ -235,19 +253,19 @@ function Hero() {
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-50 text-red-600 text-xs font-semibold tracking-wide uppercase">
             Available for opportunities
           </div>
-          
+
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight tracking-tight">
             Hi, I am <span className="text-red-700">Aya</span>,
             <br />
             Creative Technologist
           </h1>
-          
+
           <p className="text-lg text-gray-600 leading-relaxed max-w-lg">
             Creating smart software from challenges, making your story a success.
             I transform fragile architectures into robust, AI-integrated engines,
             deeply optimizing rendering paths, Web Vitals, and system telemetry.
           </p>
-          
+
           <div className="flex flex-wrap gap-4 pt-2">
             <a
               href="#contact"
@@ -269,9 +287,9 @@ function Hero() {
             <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white shadow-2xl shadow-gray-200/50">
               <Image
                 src="/assets/aya.jpg"
-                alt="Aya Ahmad Almadhon" 
-                width={320} 
-                height={320} 
+                alt="Aya Ahmad Almadhon"
+                width={320}
+                height={320}
                 className="object-cover w-full h-full"
                 priority
               />
@@ -526,7 +544,7 @@ function Articles() {
             <div className="w-16 h-1 bg-red-700 rounded-full" />
           </div>
           <a
-            href="https://medium.com/@ayaalmadhon"
+            href="https://medium.com/@aya.alaasel123"
             target="_blank"
             rel="noopener noreferrer"
             className="hidden md:flex items-center gap-2 text-sm font-medium text-gray-600 hover:text-red-700 transition-colors"
@@ -575,7 +593,7 @@ function Articles() {
 
         <div className="mt-8 text-center md:hidden">
           <a
-            href="https://medium.com/@ayaalmadhon"
+            href="https://medium.com/@aya.alaasel123"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-sm font-medium text-gray-600 hover:text-red-700 transition-colors"
@@ -588,21 +606,91 @@ function Articles() {
   );
 }
 
+function Services() {
+  return (
+    <section id="services" className="py-20 px-6 bg-white">
+      <div className="max-w-5xl mx-auto">
+        <div className="mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Services
+          </h2>
+          <div className="w-16 h-1 bg-red-700 rounded-full" />
+          <p className="text-gray-600 mt-4 max-w-2xl">
+            Available for freelance work on Upwork and Mostaql. Here are some of
+            the specialized services I offer.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-6">
+          {services.map((service) => (
+            <a
+              key={service.title}
+              href={service.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block p-6 bg-gray-50 rounded-2xl border border-gray-100 hover:border-red-200 hover:shadow-lg hover:bg-white transition-all duration-300"
+            >
+              <div className="flex items-start gap-4">
+                <div className="p-3 bg-red-50 text-red-700 rounded-xl group-hover:bg-red-700 group-hover:text-white transition-colors">
+                  {service.icon}
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-red-700 transition-colors">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                    {service.description}
+                  </p>
+                  <span className="inline-flex items-center gap-2 text-sm font-medium text-red-700 group-hover:gap-3 transition-all">
+                    View on Upwork <ExternalLink size={16} />
+                  </span>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+          <a
+            href="https://www.upwork.com/freelancers/~016362daad477e5a04"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-white border border-gray-200 hover:border-red-300 text-gray-700 font-medium rounded-lg transition-all hover:bg-red-50"
+          >
+            <Globe size={18} />
+            Upwork Profile
+          </a>
+          <a
+            href="https://mostaql.com/u/aya_almadhon"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-white border border-gray-200 hover:border-red-300 text-gray-700 font-medium rounded-lg transition-all hover:bg-red-50"
+          >
+            <Globe size={18} />
+            Mostaql Profile
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Contact() {
   return (
-    <section id="contact" className="py-20 px-6 bg-white">
+    <section id="contact" className="py-20 px-6 bg-gray-50">
       <div className="max-w-3xl mx-auto text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
           Let&apos;s build something amazing together
         </h2>
         <p className="text-lg text-gray-600 mb-10 leading-relaxed">
-          I&apos;m always interested in hearing about new projects and opportunities.
-          Whether you have a question or just want to say hi, feel free to reach out!
+          I&apos;m always interested in hearing about new projects and
+          opportunities. Whether you have a question or just want to say hi,
+          feel free to reach out!
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
-            href="mailto:ayaalmadhon2004@gmail.com"
+            href="mailto:aya.alaasel123@gmail.com"
             className="inline-flex items-center gap-2 px-8 py-4 bg-red-700 hover:bg-red-600 text-white font-medium rounded-xl transition-all hover:shadow-lg hover:shadow-red-700/25 active:scale-95"
           >
             <Mail size={20} />
@@ -612,10 +700,39 @@ function Contact() {
             href="https://github.com/Ayaalmadhon2004"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium rounded-xl transition-all active:scale-95"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-white border border-gray-200 hover:border-gray-300 text-gray-700 font-medium rounded-xl transition-all hover:bg-gray-50 active:scale-95"
           >
-            <ExternalLink size={20} />
+            <GitBranch size={20} />
             GitHub Profile
+          </a>
+        </div>
+
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-sm text-gray-500">
+          <a
+            href="https://www.linkedin.com/in/aya-almadhon2025"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-red-700 transition-colors"
+          >
+            LinkedIn
+          </a>
+          <span className="w-1 h-1 rounded-full bg-gray-300" />
+          <a
+            href="https://www.upwork.com/freelancers/~016362daad477e5a04"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-red-700 transition-colors"
+          >
+            Upwork
+          </a>
+          <span className="w-1 h-1 rounded-full bg-gray-300" />
+          <a
+            href="https://mostaql.com/u/aya_almadhon"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-red-700 transition-colors"
+          >
+            Mostaql
           </a>
         </div>
       </div>
@@ -630,7 +747,7 @@ function Footer() {
         <div className="text-center md:text-left">
           <p className="text-lg font-bold mb-1">Aya Ahmad Almadhon</p>
           <p className="text-gray-400 text-sm">
-            Full-Stack Developer | React , Next And Node.js Specialist
+            Full-Stack Developer | React, Next & Node.js Specialist
           </p>
         </div>
 
@@ -645,16 +762,25 @@ function Footer() {
             <GitBranch size={22} />
           </a>
           <a
-            href="https://linkedin.com/in/ayaalmadhon"
+            href="https://www.linkedin.com/in/aya-almadhon2025"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-400 hover:text-white transition-colors"
             aria-label="LinkedIn"
           >
+            <Globe size={22} />
+          </a>
+          <a
+            href="https://www.upwork.com/freelancers/~016362daad477e5a04"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 hover:text-white transition-colors"
+            aria-label="Upwork"
+          >
             <ExternalLink size={22} />
           </a>
           <a
-            href="mailto:ayaalmadhon2004@gmail.com"
+            href="mailto:aya.alaasel123@gmail.com"
             className="text-gray-400 hover:text-white transition-colors"
             aria-label="Email"
           >
@@ -680,6 +806,7 @@ export default function Home() {
       <Projects />
       <Experience />
       <Articles />
+      <Services />
       <Contact />
       <Footer />
     </main>
