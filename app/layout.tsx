@@ -9,9 +9,10 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://portfolio-of-aya.vercel.app"),
   title: "Aya Ahmad Almadhon | Full Stack Developer",
   description:
-    "Full Stack Developer specializing in React, Next.js, TypeScript,Node.js and high-performance web applications. Building scalable, AI-integrated solutions.",
+    "Full Stack Developer specializing in React, Next.js, TypeScript, and high-performance web applications. Building scalable, AI-integrated solutions.",
   keywords: [
     "Full Stack Developer",
     "React",
@@ -24,6 +25,9 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Aya Ahmad Almadhon", url: "https://portfolio-of-aya.vercel.app" }],
   creator: "Aya Ahmad Almadhon",
+  alternates: {
+    canonical: "https://portfolio-of-aya.vercel.app",
+  },
   openGraph: {
     title: "Aya Ahmad Almadhon | Full Stack Developer",
     description: "Creating smart software from challenges, making your story a success.",
@@ -31,10 +35,31 @@ export const metadata: Metadata = {
     siteName: "Aya Almadhon Portfolio",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/assets/aya-og.png",
+        width: 1200,
+        height: 630,
+        alt: "Aya Ahmad Almadhon - Full Stack Developer",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Aya Ahmad Almadhon | Full Stack Developer",
+    description: "React & Next.js specialist. Building high-performance web applications.",
+    images: ["/assets/aya-og.png"],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
@@ -52,18 +77,18 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Person",
-              "name": "Aya Ahmad Almadhon",
-              "url": "https://portfolio-of-aya.vercel.app",
-              "jobTitle": "Full Stack Developer",
-              "worksFor": {
+              name: "Aya Ahmad Almadhon",
+              url: "https://portfolio-of-aya.vercel.app",
+              jobTitle: "Full Stack Developer",
+              worksFor: {
                 "@type": "Organization",
-                "name": "Freelance"
+                name: "Freelance",
               },
-              "alumniOf": {
+              alumniOf: {
                 "@type": "CollegeOrUniversity",
-                "name": "Al-Azhar University"
+                name: "Al-Azhar University",
               },
-              "knowsAbout": [
+              knowsAbout: [
                 "React.js",
                 "Next.js",
                 "TypeScript",
@@ -73,14 +98,16 @@ export default function RootLayout({
                 "Core Web Vitals",
                 "Prisma",
                 "Supabase",
-                "Node.js"
+                "Node.js",
               ],
-              "sameAs": [
+              sameAs: [
                 "https://github.com/Ayaalmadhon2004",
                 "https://www.linkedin.com/in/aya-almadhon2025",
-                "https://medium.com/@aya.alaasel123"
-              ]
-            })
+                "https://medium.com/@aya.alaasel123",
+                "https://www.upwork.com/freelancers/~016362daad477e5a04",
+                "https://mostaql.com/u/aya_almadhon",
+              ],
+            }),
           }}
         />
         {children}

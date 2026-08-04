@@ -165,9 +165,9 @@ const articles = [
     link: "https://medium.com/@aya.alaasel123/at-first-i-thought-multi-language-support-was-just-an-extra-feature-e74dee169391",
   },
   {
-    title: "How Socket.io Powers Real-Time Apps: From Long Polling to Production",
+    title: "Build Real App: From Developer Screen Into Live App",
     date: "31 Jul 2026",
-    tags: ["Full Stack", "Backend", "Socket.io", "Node.js", "Design Systems"],
+    tags: ["Full Stack", "Backend", "Socket.io", "Node.js"],
     excerpt:
       "A deep dive into Socket.io architecture: Engine.io transport layer, HTTP long polling, automatic WebSocket upgrade, namespaces, rooms, Redis adapter scaling, sticky sessions, and JWT middleware authentication.",
     link: "https://medium.com/@aya.alaasel123/how-socket-io-powers-real-time-apps-from-long-polling-to-production",
@@ -384,7 +384,7 @@ function Projects() {
               >
                 <Image
                   src={project.image}
-                  alt={project.title}
+                  alt={`${project.title} project mockup`}
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                   sizes="(max-width: 768px) 100vw, 50vw"
