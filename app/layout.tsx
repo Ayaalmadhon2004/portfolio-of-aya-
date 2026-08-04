@@ -70,6 +70,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={inter.variable}>
+      <head>
+        <meta name="google-site-verification" content="4gZehlHjCZzh5cl0zr56msdLcFvdIu50kexnMyzVEFU" />
+      </head>
       <body className={`${inter.className} antialiased`}>
         <script
           type="application/ld+json"
