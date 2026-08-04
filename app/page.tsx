@@ -3,9 +3,6 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import {
-  Github,
-  Linkedin,
-  Twitter,
   ExternalLink,
   Mail,
   Menu,
@@ -26,6 +23,7 @@ import {
   GitBranch,
   Sparkles,
   BrainCircuit,
+  Globe,
 } from "lucide-react";
 
 // ─── Navigation Links ─────────────────────────────────────────────
@@ -68,29 +66,29 @@ const projects = [
   {
     title: "NutriFlow",
     category: "Full Stack | Food Aid Distribution",
-    year: "2024",
+    year:"",
     description:
       "A robust meal reservation system to streamline food distribution in Gaza. Features real-time capacity tracking, user-specific meal management, and a fully responsive bilingual UI. Optimized kitchen resource allocation and minimized food waste.",
     skills: "Next.js 14, TypeScript, Supabase, Prisma, Tailwind CSS, PWA, i18n",
-    image: "/assets/port1.png",
+    image: "/assets/NutriFlow.png",
     liveLink: "https://gaza-food-project.vercel.app",
     githubLink: "https://github.com/Ayaalmadhon2004/Healthy-Food",
   },
   {
     title: "HospiLink",
     category: "Full Stack | Hospital Management",
-    year: "2024",
+    year:"",
     description:
       "Comprehensive hospital management system with real-time patient flow tracking, doctor-specific appointment management, electronic health records integration, and role-based access control. Built with a robust RESTful API.",
     skills: "React.js, Node.js, Express.js, TypeScript, PostgreSQL, Socket.io, Docker, CI/CD",
-    image: "/assets/port1.png",
+    image: "/assets/HospiLink.png",
     liveLink: "https://hospi-link-two.vercel.app",
     githubLink: "https://github.com/Ayaalmadhon2004/HospiLink",
   },
   {
-    title: "Yousel Digital Agency",
+    title: "Yoosel Digital Agency",
     category: "Frontend | Marketing Platform",
-    year: "2024",
+    year:"",
     description:
       "A modern, desktop-first web platform for a digital marketing agency. Designed to showcase services, success stories, and advanced marketing solutions with interactive tools and smooth animations.",
     skills: "React.js, Next.js, Tailwind CSS, GSAP",
@@ -101,11 +99,11 @@ const projects = [
   {
     title: "E-Commerce Store",
     category: "Frontend | E-Commerce",
-    year: "2024",
+    year:"",
     description:
       "A dynamic, fully responsive e-commerce storefront with fluid UI/UX, smooth hover animations, and interactive card transitions for an immersive shopping experience.",
     skills: "React.js, CSS Animations, Responsive Design, UI/UX",
-    image: "/assets/port1.png",
+    image: "/assets/Ecommerce.png",
     liveLink: "https://ecommerce-one-teal-22.vercel.app",
     githubLink: "https://github.com/Ayaalmadhon2004/Ecommerce-",
   },
@@ -141,28 +139,20 @@ const experiences = [
 // ─── Articles Data ───────────────────────────────────────────────
 const articles = [
   {
-    title: "Optimizing Core Web Vitals in Next.js Applications",
-    date: "15 Mar 2026",
-    tags: ["Performance", "Next.js"],
+    title: "Why Building a Scalable i18n System in Next.js is a Game Changer",
+    date: "15 Jul 2026",
+    tags: ["i18n", "Next.js", "Architecture"],
     excerpt:
-      "A deep dive into improving LCP, FID, and CLS metrics using modern rendering patterns and image optimization techniques.",
-    link: "#",
+      "Localization is not decoration — it's a performance, UX, and growth tool. Edge language detection, RTL/LTR rendering, type-safe keys, and ISR caching for global scale without bundle bloat.",
+    link: "https://medium.com/@aya.alaasel123/at-first-i-thought-multi-language-support-was-just-an-extra-feature-e74dee169391",
   },
   {
-    title: "Building Scalable State Management with Zustand & React Query",
-    date: "28 Feb 2026",
-    tags: ["React", "Architecture"],
+    title: "How Socket.io Powers Real-Time Apps: From Long Polling to Production",
+    date: "31 Jul 2026",
+    tags: ["Full Stack", "Backend", "Socket.io", "Node.js", "Design Systems"],
     excerpt:
-      "How to combine Zustand for global UI state and React Query for server state to create maintainable, high-performance applications.",
-    link: "#",
-  },
-  {
-    title: "From Fragile to Resilient: Refactoring Legacy React Codebases",
-    date: "10 Jan 2026",
-    tags: ["Refactoring", "Best Practices"],
-    excerpt:
-      "Strategies for transforming legacy React architectures into robust, type-safe systems using TypeScript and modern patterns.",
-    link: "#",
+      "A deep dive into Socket.io architecture: Engine.io transport layer, HTTP long polling, automatic WebSocket upgrade, namespaces, rooms, Redis adapter scaling, sticky sessions, and JWT middleware authentication.",
+    link: "https://medium.com/@aya.alaasel123/how-socket-io-powers-real-time-apps-from-long-polling-to-production", 
   },
 ];
 
@@ -285,12 +275,6 @@ function Hero() {
                 className="object-cover w-full h-full"
                 priority
               />
-            </div>
-            <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-white rounded-2xl shadow-lg flex items-center justify-center border border-gray-100">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-gray-900">2+</div>
-                <div className="text-xs text-gray-500 uppercase tracking-wider">Years</div>
-              </div>
             </div>
           </div>
         </div>
@@ -441,7 +425,7 @@ function Projects() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors"
                   >
-                    GitHub <Github size={16} />
+                    GitHub <GitBranch size={16} />
                   </a>
                 </div>
               </div>
@@ -646,7 +630,7 @@ function Footer() {
         <div className="text-center md:text-left">
           <p className="text-lg font-bold mb-1">Aya Ahmad Almadhon</p>
           <p className="text-gray-400 text-sm">
-            Frontend Developer | React & Next.js Specialist
+            Full-Stack Developer | React , Next And Node.js Specialist
           </p>
         </div>
 
@@ -658,7 +642,7 @@ function Footer() {
             className="text-gray-400 hover:text-white transition-colors"
             aria-label="GitHub"
           >
-            <Github size={22} />
+            <GitBranch size={22} />
           </a>
           <a
             href="https://linkedin.com/in/ayaalmadhon"
@@ -667,16 +651,7 @@ function Footer() {
             className="text-gray-400 hover:text-white transition-colors"
             aria-label="LinkedIn"
           >
-            <Linkedin size={22} />
-          </a>
-          <a
-            href="https://twitter.com/ayaalmadhon"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-400 hover:text-white transition-colors"
-            aria-label="Twitter"
-          >
-            <Twitter size={22} />
+            <ExternalLink size={22} />
           </a>
           <a
             href="mailto:ayaalmadhon2004@gmail.com"
