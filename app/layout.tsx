@@ -9,22 +9,32 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Aya Ahmad Almadhon | Frontend Developer",
+  title: "Aya Ahmad Almadhon | Full Stack Developer",
   description:
-    "Frontend Developer specializing in React, Next.js, and high-performance web applications. Building scalable solutions with AI integration.",
+    "Full Stack Developer specializing in React, Next.js, TypeScript,Node.js and high-performance web applications. Building scalable, AI-integrated solutions.",
   keywords: [
-    "Frontend Developer",
+    "Full Stack Developer",
     "React",
     "Next.js",
     "TypeScript",
     "Tailwind CSS",
     "Web Performance",
+    "Prisma",
+    "Supabase",
   ],
-  authors: [{ name: "Aya Ahmad Almadhon" }],
+  authors: [{ name: "Aya Ahmad Almadhon", url: "https://portfolio-of-aya.vercel.app" }],
+  creator: "Aya Ahmad Almadhon",
   openGraph: {
-    title: "Aya Ahmad Almadhon | Frontend Developer",
+    title: "Aya Ahmad Almadhon | Full Stack Developer",
     description: "Creating smart software from challenges, making your story a success.",
+    url: "https://portfolio-of-aya.vercel.app",
+    siteName: "Aya Almadhon Portfolio",
+    locale: "en_US",
     type: "website",
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
@@ -35,7 +45,46 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={inter.variable}>
-      <body className={`${inter.className} antialiased`}>{children}</body>
+      <body className={`${inter.className} antialiased`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "Aya Ahmad Almadhon",
+              "url": "https://portfolio-of-aya.vercel.app",
+              "jobTitle": "Full Stack Developer",
+              "worksFor": {
+                "@type": "Organization",
+                "name": "Freelance"
+              },
+              "alumniOf": {
+                "@type": "CollegeOrUniversity",
+                "name": "Al-Azhar University"
+              },
+              "knowsAbout": [
+                "React.js",
+                "Next.js",
+                "TypeScript",
+                "Tailwind CSS",
+                "Full Stack Development",
+                "Web Performance",
+                "Core Web Vitals",
+                "Prisma",
+                "Supabase",
+                "Node.js"
+              ],
+              "sameAs": [
+                "https://github.com/Ayaalmadhon2004",
+                "https://www.linkedin.com/in/aya-almadhon2025",
+                "https://medium.com/@aya.alaasel123"
+              ]
+            })
+          }}
+        />
+        {children}
+      </body>
     </html>
   );
 }
