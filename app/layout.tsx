@@ -10,9 +10,9 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://portfolio-of-aya.vercel.app"),
-  title: "Aya Ahmad Almadhon | Full Stack Developer",
+  title: "Aya Almadhon | Full Stack Developer",
   description:
-    "Full Stack Developer specializing in React, Next.js, TypeScript, and high-performance web applications. Building scalable, AI-integrated solutions.",
+    "Aya Almadhon is a full stack developer from Palestine building fast, useful web apps with React, Next.js, TypeScript and Node.js.",
   keywords: [
     "Full Stack Developer",
     "React",
@@ -23,14 +23,14 @@ export const metadata: Metadata = {
     "Prisma",
     "Supabase",
   ],
-  authors: [{ name: "Aya Ahmad Almadhon", url: "https://portfolio-of-aya.vercel.app" }],
-  creator: "Aya Ahmad Almadhon",
+  authors: [{ name: "Aya Almadhon", url: "https://portfolio-of-aya.vercel.app" }],
+  creator: "Aya Almadhon",
   alternates: {
     canonical: "https://portfolio-of-aya.vercel.app",
   },
   openGraph: {
-    title: "Aya Ahmad Almadhon | Full Stack Developer",
-    description: "Creating smart software from challenges, making your story a success.",
+    title: "Aya Almadhon | Full Stack Developer",
+    description: "A full stack developer from Palestine building web apps that solve real problems.",
     url: "https://portfolio-of-aya.vercel.app",
     siteName: "Aya Almadhon Portfolio",
     locale: "en_US",
@@ -40,14 +40,14 @@ export const metadata: Metadata = {
         url: "/assets/aya-og.png",
         width: 1200,
         height: 630,
-        alt: "Aya Ahmad Almadhon - Full Stack Developer",
+        alt: "Aya Almadhon - Full Stack Developer",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Aya Ahmad Almadhon | Full Stack Developer",
-    description: "React & Next.js specialist. Building high-performance web applications.",
+    title: "Aya Almadhon | Full Stack Developer",
+    description: "Full stack developer from Palestine. React, Next.js, TypeScript and Node.js.",
     images: ["/assets/aya-og.png"],
   },
   robots: {
@@ -80,7 +80,7 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Person",
-              name: "Aya Ahmad Almadhon",
+              name: "Aya Almadhon",
               url: "https://portfolio-of-aya.vercel.app",
               jobTitle: "Full Stack Developer",
               worksFor: {
