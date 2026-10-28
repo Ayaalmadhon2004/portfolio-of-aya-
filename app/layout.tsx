@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Fraunces, Caveat } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -7,6 +7,21 @@ const inter = Inter({
   display: "swap",
   variable: "--font-inter",
 });
+
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-fraunces",
+});
+
+const caveat = Caveat({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-caveat",
+});
+
+const OG_IMAGE_WIDTH = 1200;
+const OG_IMAGE_HEIGHT = 630;
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://portfolio-of-aya.vercel.app"),
@@ -38,8 +53,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/assets/aya-og.png",
-        width: 1200,
-        height: 630,
+        width: OG_IMAGE_WIDTH,
+        height: OG_IMAGE_HEIGHT,
         alt: "Aya Almadhon - Full Stack Developer",
       },
     ],
@@ -69,7 +84,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={`${inter.variable} ${fraunces.variable} ${caveat.variable}`}>
       <head>
         <meta name="google-site-verification" content="4gZehlHjCZzh5cl0zr56msdLcFvdIu50kexnMyzVEFU" />
       </head>
