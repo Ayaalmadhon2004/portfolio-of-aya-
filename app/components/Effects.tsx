@@ -6,17 +6,10 @@ import { ArrowUp } from "lucide-react";
 // ─── Tuning constants ─────────────────────────────────────────────
 
 const DEFAULT_VISIBLE_RATIO = 0.15;
-const COUNT_VISIBLE_RATIO = 0.5;
-const COUNT_DURATION_MS = 1200;
-const COUNT_EASE_POWER = 3;
 const MAGNET_STRENGTH = 0.3;
 const HALF = 0.5;
 const TILT_X_DEG = 8;
 const TILT_Y_DEG = 10;
-const WORD_HOLD_MS = 1800;
-const WORD_GAP_MS = 200;
-const DELETE_SPEED_MS = 40;
-const TYPE_SPEED_MS = 80;
 const CURSOR_LAG = 0.16;
 const SHOW_TOP_BUTTON_AFTER_PX = 600;
 
@@ -65,34 +58,6 @@ export function Reveal({
     >
       {children}
     </div>
-  );
-}
-
-// ─── Count up ─────────────────────────────────────────────────────
-
-export function CountUp({ to, suffix = "" }: { to: number; suffix?: string }) {
-  const [ref, seen] = useInView<HTMLSpanElement>(COUNT_VISIBLE_RATIO);
-  const [n, setN] = useState(0);
-
-  useEffect(() => {
-    if (!seen) return;
-    const start = performance.now();
-    const duration = COUNT_DURATION_MS;
-    let raf = 0;
-    const tick = (t: number) => {
-      const p = Math.min((t - start) / duration, 1);
-      setN(Math.round(to * (1 - Math.pow(1 - p, COUNT_EASE_POWER))));
-      if (p < 1) raf = requestAnimationFrame(tick);
-    };
-    raf = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(raf);
-  }, [seen, to]);
-
-  return (
-    <span ref={ref}>
-      {n}
-      {suffix}
-    </span>
   );
 }
 
@@ -163,43 +128,6 @@ export function TiltCard({
     >
       {children}
     </div>
-  );
-}
-
-// ─── Typewriter ───────────────────────────────────────────────────
-
-export function Typewriter({ words }: { words: string[] }) {
-  const [index, setIndex] = useState(0);
-  const [text, setText] = useState(words[0]);
-  const [deleting, setDeleting] = useState(false);
-
-  useEffect(() => {
-    const full = words[index];
-    let t: ReturnType<typeof setTimeout>;
-    if (!deleting && text === full) {
-      t = setTimeout(() => setDeleting(true), WORD_HOLD_MS);
-    } else if (deleting && text === "") {
-      t = setTimeout(() => {
-        setDeleting(false);
-        setIndex((index + 1) % words.length);
-      }, WORD_GAP_MS);
-    } else {
-      t = setTimeout(
-        () =>
-          setText(
-            deleting ? full.slice(0, text.length - 1) : full.slice(0, text.length + 1)
-          ),
-        deleting ? DELETE_SPEED_MS : TYPE_SPEED_MS
-      );
-    }
-    return () => clearTimeout(t);
-  }, [text, deleting, index, words]);
-
-  return (
-    <span className="text-red-700">
-      {text}
-      <span className="ml-0.5 inline-block w-[3px] h-[0.9em] translate-y-[0.1em] bg-red-700 animate-[blink_1s_steps(1)_infinite]" />
-    </span>
   );
 }
 
@@ -299,13 +227,13 @@ export function ScrollUI() {
       <div
         ref={bar}
         aria-hidden
-        className="fixed left-0 top-0 z-[60] h-1 w-full origin-left scale-x-0 bg-gradient-to-r from-red-700 to-red-400"
+        className="fixed left-0 top-0 z-[60] h-1 w-full origin-left scale-x-0 bg-red-700"
       />
       <button
         type="button"
         aria-label="Back to top"
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        className={`fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-red-700 text-white shadow-lg shadow-red-700/30 transition-all duration-300 hover:-translate-y-1 hover:bg-red-600 ${
+        className={`fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-red-700 text-white transition-all duration-300 hover:-translate-y-1 hover:bg-red-600 ${
           show ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-4 opacity-0"
         }`}
       >
