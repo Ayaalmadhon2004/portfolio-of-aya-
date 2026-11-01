@@ -129,8 +129,8 @@ const projects: Project[] = [
     title: "HospiLink",
     category: "Full stack · Hospital management",
     description:
-      "A dashboard for the day-to-day running of a hospital: bed allocation, patient admissions and incident tracking. Different roles can see and edit different things, all backed by a REST API.",
-    skills: "React.js, Node.js, Express.js, TypeScript, PostgreSQL",
+      "A platform for the day-to-day running of a hospital: patients and beds, live vitals, appointments, pharmacy stock, billing and ambulance dispatch. Four roles see and change different things, it works in Arabic and English, and the hard rules (a bed is never double-booked, stock never goes negative, invoice numbers never skip) are enforced in the database and backed by 1,200+ tests.",
+    skills: "React.js, Node.js, Express.js, TypeScript, PostgreSQL, Prisma, Socket.io, Playwright",
     image: "/assets/HospiLink.png",
     liveLink: "https://hospi-link-two.vercel.app",
     githubLink: "https://github.com/Ayaalmadhon2004/HospiLink",
