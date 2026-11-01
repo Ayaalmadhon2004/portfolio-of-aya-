@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Aya Almadhon: Portfolio
 
-## Getting Started
+**My personal portfolio: who I am, what I have built, where I have worked and how to reach me.**
 
-First, run the development server:
+**Live:** [portfolio-of-aya.vercel.app](https://portfolio-of-aya.vercel.app)
+
+![Home](docs/images/home.png)
+
+## What is on the site
+
+| Section | What you will find |
+|---|---|
+| **About** | Who I am, where I study (Al-Azhar University) and what I build, with a download link for my CV. |
+| **Skills** | Grouped by area: frontend, state management, backend and database, DevOps, and performance and SEO. |
+| **Projects** | The things I have built, each with a short story, the stack, a live link and the code. |
+| **Experience** | Internships and jobs, newest first. |
+| **Articles, Services, Contact** | Writing, what I can help with, and the easiest ways to reach me. |
+
+![Projects](docs/images/projects.png)
+
+## How it is built
+
+A single-page portfolio on **Next.js 16 (App Router)** with **React 19** and **Tailwind CSS 4**, written in TypeScript.
+
+- **Fast by default.** The page is pre-rendered at build time, fonts are loaded through `next/font`, and the scroll and reveal effects are small and live in one file (`app/components/Effects.tsx`).
+- **SEO.** Page metadata, an Open Graph image, JSON-LD structured data, and a sitemap and `robots.txt` generated at build time with `next-sitemap`.
+- **Considerate motion.** Animation is switched off for visitors who prefer reduced motion.
+- **Responsive.** Designed to work from phones to wide desktop screens, with a navigation menu that adapts.
+
+<p align="center">
+  <img src="docs/images/mobile.png" alt="Mobile view" width="280" />
+</p>
+
+## Tech stack
+
+Next.js 16 · React 19 · TypeScript · Tailwind CSS 4 · lucide-react · Inter, Fraunces and Caveat fonts · next-sitemap · deployed on Vercel.
+
+## Run it locally
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/Ayaalmadhon2004/portfolio-of-aya-.git
+cd portfolio-of-aya-
+npm install
+npm run dev        # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+| Command | What it does |
+|---|---|
+| `npm run dev` | Development server |
+| `npm run build` | Production build, then generates the sitemap |
+| `npm start` | Serves the production build |
+| `npm run lint` | ESLint |
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+app/
+├── page.tsx                all sections and the content (projects, skills, experience)
+├── layout.tsx              fonts, metadata, Open Graph and structured data
+├── globals.css             theme colours and base styles
+└── components/Effects.tsx  scroll and reveal effects
+public/
+├── assets/                 project screenshots and my photo
+└── Aya-Almadhon-CV.pdf
+```
 
-## Learn More
+To add a project, add an entry to the projects list in `app/page.tsx` and put its screenshot in `public/assets/`.
 
-To learn more about Next.js, take a look at the following resources:
+## Contact
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[Email](mailto:aya.alaasel123@gmail.com) · [LinkedIn](https://linkedin.com/in/aya-almadhon2025) · [GitHub](https://github.com/Ayaalmadhon2004)
